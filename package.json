@@ -1,0 +1,26 @@
+{
+  "name": "js-lib",
+  "version": "0.0.1",
+  "description": "A javascript library.",
+  "author": "Frankie <1426203851@qq.com>",
+  "repository": "https://github.com/toFrankie/lib.git",
+  "homepage": "https://github.com/toFrankie/lib#readme",
+  "bugs": "https://github.com/toFrankie/lib/issues",
+  "main": "./main.js",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "unpkg": "./umd/lib.min.js",
+  "license": "MIT",
+  "keywords": [
+    "javascript",
+    "rollup",
+    "library"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "rollup": "^2.67.1"
+  }
+}
