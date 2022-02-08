@@ -1,31 +1,35 @@
 import { babel } from '@rollup/plugin-babel'
-import serve from 'rollup-plugin-serve'
+import { terser } from 'rollup-plugin-terser'
+// import serve from 'rollup-plugin-serve'
 
 export default {
   input: 'src/index.js',
   output: [
     {
       format: 'es',
-      file: 'dist/bundle.es.js'
-    },
-    {
-      format: 'umd',
-      name: 'MyBundle',
-      file: 'dist/bundle.umd.js'
+      file: 'dist/index.es.js'
     },
     {
       format: 'cjs',
-      file: 'dist/bundle.cjs.js'
+      file: 'dist/index.cjs.js'
+    },
+    {
+      format: 'umd',
+      file: 'dist/index.umd.js',
+      name: 'bundle'
     }
   ],
   plugins: [
+    terser(),
+
     babel({
       presets: ['@babel/preset-env']
-    }),
-    serve({
-      open: true,
-      port: 3000,
-      contentBase: ['examples']
     })
+
+    // serve({
+    //   open: true,
+    //   port: 3000,
+    //   contentBase: ['examples']
+    // })
   ]
 }
