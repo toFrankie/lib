@@ -1,4 +1,5 @@
-const { babel } = require('@rollup/plugin-babel')
+import { babel } from '@rollup/plugin-babel'
+import serve from 'rollup-plugin-serve'
 
 export default {
   input: 'src/index.js',
@@ -20,6 +21,11 @@ export default {
   plugins: [
     babel({
       presets: ['@babel/preset-env']
+    }),
+    serve({
+      open: true,
+      port: 3000,
+      contentBase: ['examples']
     })
   ]
 }
